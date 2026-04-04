@@ -8,6 +8,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Cormorant+Garamond:ital,wght@0,500;1,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <title>An Xuyen & Q Bakery</title>
 
   <style>
@@ -18,54 +21,82 @@
 }
 
 body {
-  background: #f5d6a0;
+  background: #f3e6d0;
   color: #202020;
   font-family: Arial, sans-serif;
   line-height: 1.6;
 }
 
 .hero {
-  min-height: 60vh;
+  min-height: 78vh;
   background:
-    linear-gradient(rgba(0, 0, 0, 0.30), rgba(0, 0, 0, 0.30)),
+    linear-gradient(rgba(30, 20, 10, 0.38), rgba(30, 20, 10, 0.38)),
     url("images/banh-my.jpg") center center / cover no-repeat;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 40px 20px;
+  padding: 60px 20px;
 }
 
-.hero h1 {
+.hero-overlay {
+  max-width: 900px;
+  margin: 0 auto;
+  color: #fcfcfc;
+}
+
+.hero-topline {
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  letter-spacing: 5px;
+  color: #e2ca95;
+  margin-bottom: 26px;
+}
+
+.hero-title {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(34px, 5vw, 70px);
-  color: #f7f7f7;
-  letter-spacing: 2px;
-  text-shadow: 3px 3px 15px rgba(0,0,0,0.6);
-  margin-bottom: 24px;
-  animation: fadeInDown 1s ease;
-  animation-delay: 0s;
+  font-size: clamp(42px, 7vw, 88px);
+  line-height: 1.05;
+  font-weight: 700;
+  color: #e2c599;
+  text-shadow: 0 6px 18px rgba(0,0,0,0.28);
+  margin-bottom: 26px;
+}
+
+.hero-script {
+  display: block;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 600;
+  font-size: 0.9em;
+  color: #d49945;
+}
+
+.hero-subtext {
+  max-width: 760px;
+  margin: 0 auto 28px;
+  font-size: clamp(18px, 2.2vw, 26px);
+  line-height: 1.5;
+  color: #f5d4b8;
 }
 
 .logos {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 100px;
+  gap: 40px;
   flex-wrap: wrap;
+  margin-top: 20px;
 }
 
 .logos img {
-  width: 130px;
-  height: 130px;
+  width: 140px;
+  height: 140px;
   object-fit: contain;
-  padding: 10px; /* cân lại logo */
-  background: rgba(255,255,255,0.9);
-  border-radius: 18px;
-  transition: all 0.3s ease;
-  animation: fadeInDown 1s ease;
-  animation-delay: 0.3s;
+  background: rgba(255,255,255,0.92);
+  border-radius: 20px;
+  padding: 12px;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.16);
 }
 @keyframes fadeInDown {
   from {
@@ -93,6 +124,32 @@ body {
   transform: scale(1.1);
 }
 
+
+.section-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 40px 40px;
+  
+}
+
+.section-divider h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 25px;
+  color: #522f02;
+  margin: 0;
+}
+
+/* QUAN TRỌNG: gạch 2 bên */
+.section-divider .line {
+  flex: 1;
+  height: 1px;
+  background: #cea775; /* đậm hơn cho dễ thấy */
+  max-width: 15px;
+}
+
 .store-section {
   max-width: 1100px;
   margin: 0 auto;
@@ -100,12 +157,12 @@ body {
 }
 
 .store-card {
-  background: #e8c998;
-  border: 2px solid #d9ae6a;
-  border-radius: 24px;
-  padding: 28px;
+  background: #f0eeecfb;
+  border: 2px solid #f0eeecfb;
+  border-radius: 50px;
+  padding: 40px;
   margin-bottom: 30px;
-  box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.329);
   transition: all 0.3s ease;
   animation: fallDown 0.8s ease forwards;
 }
@@ -139,29 +196,33 @@ body {
   margin-bottom: 14px;
 }
 
-.store-card .anxuyen-title {
-  font-family: 'Anton', sans-serif;
-  color: #154db4;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
-
+.store-card .anxuyen-title,
 .store-card .q-title {
-  font-family: 'Anton', sans-serif;
-  color: #c32026;
-  letter-spacing: 1px;
-}
+ font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      color: #5f381f; /* dark brown like in the image */
+      font-size: 30px;
+      line-height: 1.1;
+      letter-spacing: 0.5px;
+    }
 
 .store-card p {
-  font-size: clamp(16px, 2vw, 18px);
-  margin-bottom: 10px;
+ font-size: 17px;
+  color: #6b5a4d;
+  line-height: 1.7;
+}
+
+.store-card p strong {
+  color: #6b5a4d;
+  font-weight: 700;
 }
 
 .actions {
   display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
+  align-items: center;
+  gap: 10px;
   margin-top: 14px;
+  flex-wrap: wrap;
 }
 
 .btn,
@@ -169,8 +230,8 @@ body {
   border: none;
   text-decoration: none;
   border-radius: 14px;
-  min-width: 56px;
-  min-height: 56px;
+  min-width: unset;
+  min-height: unset;
   padding: 12px 18px;
   display: inline-flex;
   justify-content: center;
@@ -179,32 +240,55 @@ body {
   transition: all 0.25s ease;
 }
 
+
 .btn:hover, .icon-btn:hover {
   transform: scale(1.1);
   opacity: 0.9;
 }
 
 .btn {
-  background: rgb(201, 135, 84);
-  color: rgb(0, 0, 0);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 34px;
+  padding: 0 16px;
+  min-width: unset;
+  min-height: unset;
+
+  background: #4b2e1f;
+  color: #ffffff;
+  border: none;
+  border-radius: 999px;
+  text-decoration: none;
+
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1;
+
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+  transition: all 0.25s ease;
 }
+
 
 .icon-btn {
-  background: rgb(201, 135, 84);
-  color: white;
+  width: 50px;
+  height: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #f5efe6;
+  border: 1px solid #e2b478;
+  border-radius: 50%;
+
+  text-decoration: none;
 }
 
-.phone i {
-  color: #22c55e;
-}
-
-.map i {
-  color: #1a73e8;
-}
-
-.email img {
-  width: 24px;
-  height: 24px;
+.icon-btn i {
+  color: #caa25d;
+  font-size: 15px;
 }
 
 .store-logo {
@@ -224,12 +308,20 @@ body {
 }
 
 .footer {
-  background: #d4772f;
-  color: rgb(0, 0, 0);
+  background: #583523; /* nâu đậm */
+  color: #f3e6d8;
+
   text-align: center;
-  padding: 24px;
+  padding: 18px 12px;
+
+  font-size: 14px;
 }
 
+.footer-sub {
+  font-size: 12px;
+  color: #d8c2a8;
+  margin-top: 4px;
+}
 .hero h1,
 .logos img,
 .store-card {
@@ -293,9 +385,8 @@ body {
 
   .btn,
   .icon-btn {
-    min-width: 52px;
-    min-height: 52px;
-    padding: 10px 14px;
+    min-width: unset;
+    min-height: unset;
   }
 
 .store-card:active,
@@ -308,12 +399,29 @@ body {
   </style>
 <head>
 <body>
-  <section class="hero">
-    <h1>"The best choice in town"</h1>
-    <div class="logos">
-      <img src="images/an-xuyen-logo.jpg.jpg" alt="An Xuyen Bakery logo" />
-      <img src="images/q-bakery-remove-logo.png" alt="Q Bakery logo" />
-  </section>
+<section class="hero">
+  <div class="hero-overlay">
+    <p class="hero-topline">VIETNAMESE BAKERY · SEATTLE AREA</p>
+
+    <h1 class="hero-title">
+      Baked with
+      <span class="hero-script">love,</span>
+      served fresh daily.
+    </h1>
+
+    <p class="hero-subtext">
+      Two beloved bakeries. One family of flavors.<br>
+      Bánh mì, pastries & coffee rooted in tradition.
+    </p>
+  </div>
+</section>
+
+<div class="section-divider" id="stores">
+  <span class="line"></span>
+  <h2>Our Locations</h2>
+  <span class="line"></span>
+</div>
+
 
   <section class="store-section">
     <div class="store-card">
@@ -326,18 +434,18 @@ body {
       <p><strong>Order (test only):</strong> 206 437 1368</p>
 
       <div class="actions">
-        <a class="btn" href="menu-an-xuyen.html">Menu</a>
+        <a class="btn" href="menu-an-xuyen.html">View Menu</a>
 
         <a class="icon-btn phone" href="tel:+12062447985">
-          <i class="fas fa-phone"></i>
+          <i class="fa-solid fa-phone"></i>   
         </a>
 
         <a class="icon-btn map" href="https://maps.google.com/?q=19043+International+Blvd+SeaTac+WA+98188" target="_blank">
-          <i class="fas fa-location-dot"></i>
+          <i class="fa-solid fa-location-dot"></i> <!-- address -->
         </a>
 
         <a class="icon-btn email" href="mailto:anxuyenfb@comcast.net">
-          <img src="images/gmail.png.png" alt="email">
+          <i class="fa-regular fa-envelope"></i>
         </a>
       </div>
     </div>
@@ -358,7 +466,7 @@ body {
       <p><strong>Address:</strong> 3818 S Graham St #B, Seattle, WA 98118</p>
 
       <div class="actions">
-       <a class="btn" href="file/menu-bakery.pdf" target="_blank" rel="noopener noreferrer">Menu</a>
+       <a class="btn" href="file/menu-bakery.pdf" target="_blank" rel="noopener noreferrer">View Menu</a>
         <a class="icon-btn phone" href="tel:+12067259193">
           <i class="fas fa-phone"></i>
         </a>
@@ -368,7 +476,8 @@ body {
         </a>
 
         <a class="icon-btn email" href="mailto:qbakeryseattle@gmail.com">
-          <img src="images/gmail.png.png" alt="email">
+          <i class="fa-regular fa-envelope"></i>   <!-- email -->
+
         </a>
       </div>
     </div>
@@ -384,8 +493,9 @@ body {
 
   </section>
 
-  <footer class="footer">
-    <p>An Xuyen Bakery & Q Bakery</p>
-  </footer>
+<footer class="footer">
+  <p><strong>An Xuyen Bakery & Q Bakery</strong> — The best choice in town.</p>
+  <p class="footer-sub">Made with ♥ for the Seattle Vietnamese community</p>
+</footer>
 </body>
 </html>

@@ -3,141 +3,357 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
   <title>An Xuyen Menu</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400&display=swap" rel="stylesheet">
 
   <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --cream: #f5efe4;
+      --parchment: #ede3d0;
+      --gold: #b8975a;
+      --gold-lt: #d4b07a;
+      --espresso: #2c1a0e;
+      --brown: #5c3d22;
+      --muted: #6b4a2e;
+    }
+
     body {
-      font-family: 'Poppins', sans-serif;
-      background: #e0bf86;
-      padding: 30px 20px;
-       line-height: 1.5;
-    }
-
-    h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 50px;
-      text-align: center;
-      margin-bottom: 30px;
-      color: #8b5e3c;
-    }
-
-    .menu-section {
-      margin-bottom: 30px;
-      max-width: 500px;
-      margin:0 auto 20px;
-      text-align: center;    
-    }
-
-    .menu-section h2 {
-      color: #8b5e3c;
-      margin-bottom: 10px;
-      border-bottom: 2px solid #8b5e3c;
-      display: inline-block;
-    }
-
-    ul {
-      margin-top: 8px;
-      padding-left: 20px;
-      list-style: none;
-      padding-left: 0;
-    }
-
-    li {
-      margin-bottom: 4px;
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      background-color: var(--espresso);
+      background-image:
+        repeating-linear-gradient(
+          0deg,
+          transparent,
+          transparent 40px,
+          rgba(255,255,255,0.015) 40px,
+          rgba(255,255,255,0.015) 41px
+        ),
+        repeating-linear-gradient(
+          90deg,
+          transparent,
+          transparent 40px,
+          rgba(255,255,255,0.015) 40px,
+          rgba(255,255,255,0.015) 41px
+        );
+      min-height: 100vh;
+      padding: 50px 20px 60px;
+      color: var(--espresso);
     }
 
     .back {
-      display: inline-block;
-      margin-bottom: 20px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
       text-decoration: none;
-      background: #8b5e3c;
-      color: white;
-      padding: 10px 16px;
-      border-radius: 10px;
+      font-family: 'Jost', sans-serif;
+      font-weight: 400;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold-lt);
+      border: 1px solid rgba(184,151,90,0.35);
+      padding: 9px 18px;
+      border-radius: 2px;
+      transition: background 0.25s, color 0.25s;
+      margin-bottom: 48px;
     }
 
-    p {
-  max-width: 600px;
-  margin: 10px auto 20px;
-  text-align: center;
-  line-height: 1.5;
+    .back:hover {
+      background: rgba(184,151,90,0.12);
+      color: #e8d4a8;
+    }
+
+    .back::before {
+      content: '←';
+      font-size: 13px;
+    }
+
+    .menu-container {
+      max-width: 560px;
+      margin: 0 auto;
+      background: var(--cream);
+      border-radius: 4px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .menu-container::before {
+      content: '';
+      display: block;
+      height: 5px;
+      background: linear-gradient(90deg, var(--brown), var(--gold), var(--gold-lt), var(--gold), var(--brown));
+    }
+
+    .menu-inner {
+      padding: 52px 52px 60px;
+      position: relative;
+    }
+
+    .menu-inner::before,
+    .menu-inner::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 60px;
+      position: absolute;
+      border-color: var(--gold);
+      border-style: solid;
+      opacity: 0.45;
+    }
+
+    .menu-inner::before {
+      top: 24px;
+      left: 24px;
+      border-width: 1px 0 0 1px;
+    }
+
+    .menu-inner::after {
+      bottom: 24px;
+      right: 24px;
+      border-width: 0 1px 1px 0;
+    }
+
+    .menu-header {
+      text-align: center;
+      margin-bottom: 38px;
+    }
+
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      font-size: 58px;
+      letter-spacing: 0.06em;
+      color: var(--espresso);
+      line-height: 1;
+      margin-bottom: 18px;
+    }
+
+    .header-rule {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      justify-content: center;
+    }
+
+    .header-rule span {
+      display: block;
+      height: 1px;
+      width: 60px;
+      background: var(--gold);
+      opacity: 0.6;
+    }
+
+    .header-rule em {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 15px;
+      color: var(--gold);
+      letter-spacing: 0.1em;
+    }
+
+    .menu-section {
+      margin-bottom: 28px;
+      text-align: center;
+    }
+
+    .menu-section:last-child {
+      margin-bottom: 0;
+    }
+
+    .menu-section h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
+      font-size: 11px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .menu-section h2::before,
+    .menu-section h2::after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 50%;
+      width: 28px;
+      height: 1px;
+      background: var(--gold-lt);
+      opacity: 0.6;
+    }
+
+    .menu-section h2::before {
+      right: calc(100% + 10px);
+    }
+
+    .menu-section h2::after {
+      left: calc(100% + 10px);
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+   li {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+  font-size: 21px;   /* to rõ hơn */
+  letter-spacing: 0.02em;
+  color: var(--espresso);
+  padding: 3px 0;
+  line-height: 1.4;
 }
 
-.menu-container {
-  max-width: 600px;
-  margin: 0 auto;
-  background: #dfbc63;
-  padding: 30px 20px;
-  border-radius: 16px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-}
+    li:hover {
+      color: var(--brown);
+    }
 
+    li small {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 500;
+      margin-left: 4px;
+    }
+
+    .section-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin: 24px 0;
+    }
+
+    .section-divider::before,
+    .section-divider::after {
+      content: '';
+      display: block;
+      flex: 1;
+      height: 1px;
+      background: var(--gold);
+      opacity: 0.2;
+    }
+
+    .section-divider span {
+      width: 5px;
+      height: 5px;
+      background: var(--gold);
+      border-radius: 50%;
+      opacity: 0.5;
+    }
+
+    .menu-footer {
+      height: 5px;
+      background: linear-gradient(90deg, var(--brown), var(--gold), var(--gold-lt), var(--gold), var(--brown));
+    }
+
+    @media (max-width: 480px) {
+      .menu-inner {
+        padding: 36px 28px 44px;
+      }
+
+      h1 {
+        font-size: 44px;
+      }
+
+      li {
+        font-size: 17px;
+      }
+    }
   </style>
 </head>
 
 <body>
 
-<a class="back" href="index.html">← Back</a>
+  <a class="back" href="index.html">Back</a>
 
-<h1>     Menu      </h1>
+  <div class="menu-container">
+    <div class="menu-inner">
 
-<div class="menu-container">
-<div class="menu-section">
-  <h2>French Bread</h2>
-  <ul>
-    <li>8 inch Demi baguette (3.5oz)</li>
-    <li>24 inch baguette (12oz)</li>
-    <li>4 inch con coc (2 oz)</li>
-    <li>10 inch</li>
-    <li>12 inch</li>
-    <li>Batard</li>
-  </ul>
-</div>
+      <div class="menu-header">
+        <h1>Menu</h1>
+        <div class="header-rule">
+          <span></span>
+          <em>An Xuyen</em>
+          <span></span>
+        </div>
+      </div>
 
-<div class="menu-section">
-  <h2>Croissants</h2>
-  <ul>
-    <li>Regular croissant</li>
-    <li>Mini croissants</li>
-    <li>Almond croissant</li>
-    <li>Raisin croissant</li>
-    <li>Cinnamon croissant</li>
-    <li>Coconut croissant</li>
-    <li>Chocolate croissant</li>
-  </ul>
-</div>
+      <div class="menu-section">
+        <h2>French Bread</h2>
+        <ul>
+          <li>8 inch Demi Baguette <small>3.5 oz</small></li>
+          <li>24 inch Baguette <small>12 oz</small></li>
+          <li>4 inch Con Coc <small>2 oz</small></li>
+          <li>10 inch</li>
+          <li>12 inch</li>
+          <li>Batard</li>
+        </ul>
+      </div>
 
-<div class="menu-section">
-  <h2>Sweet Bread</h2>
-  <ul>
-    <li>Sweet roll</li>
-    <li>Taro bun</li>
-    <li>Coconut bun</li>
-    <li>Raisin almond twisted bread</li>
-    <li>Mung bean bun</li>
-  </ul>
-</div>
+      <div class="section-divider"><span></span></div>
 
-<div class="menu-section">
-  <h2>Puff Pastries</h2>
-  <ul>
-    <li>Cinnamon twist</li>
-    <li>Parmnier</li>
-    <li>Patechaud</li>
-  </ul>
-</div>
+      <div class="menu-section">
+        <h2>Croissants</h2>
+        <ul>
+          <li>Regular Croissant</li>
+          <li>Mini Croissants</li>
+          <li>Almond Croissant</li>
+          <li>Raisin Croissant</li>
+          <li>Cinnamon Croissant</li>
+          <li>Coconut Croissant</li>
+          <li>Chocolate Croissant</li>
+        </ul>
+      </div>
 
-<div class="menu-section">
-  <h2>Cookies</h2>
-  <ul>
-    <li>French almond cookie</li>
-    <li>French currant cookie</li>
-    <li>Macaron coconut</li>
-  </ul>
-</div>
-</div>
+      <div class="section-divider"><span></span></div>
+
+      <div class="menu-section">
+        <h2>Sweet Bread</h2>
+        <ul>
+          <li>Sweet Roll</li>
+          <li>Taro Bun</li>
+          <li>Coconut Bun</li>
+          <li>Raisin Almond Twisted Bread</li>
+          <li>Mung Bean Bun</li>
+        </ul>
+      </div>
+
+      <div class="section-divider"><span></span></div>
+
+      <div class="menu-section">
+        <h2>Puff Pastries</h2>
+        <ul>
+          <li>Cinnamon Twist</li>
+          <li>Palmier</li>
+          <li>PateChaud</li>
+        </ul>
+      </div>
+
+      <div class="section-divider"><span></span></div>
+
+      <div class="menu-section">
+        <h2>Cookies</h2>
+        <ul>
+          <li>French Almond Cookie</li>
+          <li>French Currant Cookie</li>
+          <li>Coconut Macaron</li>
+        </ul>
+      </div>
+
+    </div>
+    <div class="menu-footer"></div>
+  </div>
+
 </body>
 </html>
