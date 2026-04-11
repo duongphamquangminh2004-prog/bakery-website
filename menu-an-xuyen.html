@@ -3,7 +3,31 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>An Xuyen Menu</title>
+
+  <!-- SEO: Page title with business name, page type, and location -->
+  <title>Menu – An Xuyen Bakery | Vietnamese Bakery in Seattle Area</title>
+
+  <!-- SEO: Meta description summarizing the page for search engines -->
+  <meta name="description" content="Browse the full menu at An Xuyen Bakery — featuring French bread, croissants, sweet bread, puff pastries, and cookies. A Vietnamese bakery serving the Seattle area." />
+
+  <!-- SEO: Allow indexing and following links -->
+  <meta name="robots" content="index, follow" />
+
+  <!-- SEO: Canonical URL to prevent duplicate content issues -->
+  <link rel="canonical" href="https://duongphamquangminh2004-prog.github.io/bakery-website/menu-an-xuyen.html" />
+
+  <!-- SEO: Open Graph tags for social sharing (Facebook, LinkedIn, etc.) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Menu – An Xuyen Bakery | Vietnamese Bakery in Seattle Area" />
+  <meta property="og:description" content="Browse the full menu at An Xuyen Bakery — French bread, croissants, sweet bread, puff pastries, and cookies. A Vietnamese bakery serving the Seattle area." />
+  <meta property="og:url" content="https://duongphamquangminh2004-prog.github.io/bakery-website/menu-an-xuyen.html" />
+  <meta property="og:site_name" content="An Xuyen Bakery" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- SEO: Twitter Card tags for sharing on Twitter/X -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Menu – An Xuyen Bakery | Vietnamese Bakery in Seattle Area" />
+  <meta name="twitter:description" content="Browse the full menu at An Xuyen Bakery — French bread, croissants, sweet bread, puff pastries, and cookies. A Vietnamese bakery serving the Seattle area." />
 
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400&display=swap" rel="stylesheet">
 
@@ -208,7 +232,7 @@
    li {
   font-family: 'Cormorant Garamond', serif;
   font-weight: 500;
-  font-size: 21px;   /* to rõ hơn */
+  font-size: 21px;
   letter-spacing: 0.02em;
   color: var(--espresso);
   padding: 3px 0;
@@ -277,83 +301,94 @@
 
   <a class="back" href="index.html">Back</a>
 
-  <div class="menu-container">
-    <div class="menu-inner">
+  <!-- SEO: main landmark wraps the primary page content -->
+  <main>
 
-      <div class="menu-header">
-        <h1>Menu</h1>
-        <div class="header-rule">
-          <span></span>
-          <em>An Xuyen</em>
-          <span></span>
-        </div>
+    <div class="menu-container">
+      <div class="menu-inner">
+
+        <header class="menu-header">
+          <!-- SEO: Single H1 describing the page clearly for search engines -->
+          <h1>Menu</h1>
+          <div class="header-rule">
+            <span></span>
+            <em>An Xuyen</em>
+            <span></span>
+          </div>
+        </header>
+
+        <!-- SEO: article wraps the full menu as a self-contained piece of content -->
+        <article>
+
+          <section class="menu-section">
+            <h2>French Bread</h2>
+            <ul>
+              <li>8 inch Demi Baguette <small>3.5 oz</small></li>
+              <li>24 inch Baguette <small>12 oz</small></li>
+              <li>4 inch Con Coc <small>2 oz</small></li>
+              <li>10 inch</li>
+              <li>12 inch</li>
+              <li>Batard</li>
+            </ul>
+          </section>
+
+          <div class="section-divider"><span></span></div>
+
+          <section class="menu-section">
+            <h2>Croissants</h2>
+            <ul>
+              <li>Regular Croissant</li>
+              <li>Mini Croissants</li>
+              <li>Almond Croissant</li>
+              <li>Raisin Croissant</li>
+              <li>Cinnamon Croissant</li>
+              <li>Coconut Croissant</li>
+              <li>Chocolate Croissant</li>
+            </ul>
+          </section>
+
+          <div class="section-divider"><span></span></div>
+
+          <section class="menu-section">
+            <h2>Sweet Bread</h2>
+            <ul>
+              <li>Sweet Roll</li>
+              <li>Taro Bun</li>
+              <li>Coconut Bun</li>
+              <li>Raisin Almond Twisted Bread</li>
+              <li>Mung Bean Bun</li>
+            </ul>
+          </section>
+
+          <div class="section-divider"><span></span></div>
+
+          <section class="menu-section">
+            <h2>Puff Pastries</h2>
+            <ul>
+              <li>Cinnamon Twist</li>
+              <li>Palmier</li>
+              <li>PateChaud</li>
+            </ul>
+          </section>
+
+          <div class="section-divider"><span></span></div>
+
+          <section class="menu-section">
+            <h2>Cookies</h2>
+            <ul>
+              <li>French Almond Cookie</li>
+              <li>French Currant Cookie</li>
+              <li>Coconut Macaron</li>
+            </ul>
+          </section>
+
+        </article>
+
       </div>
-
-      <div class="menu-section">
-        <h2>French Bread</h2>
-        <ul>
-          <li>8 inch Demi Baguette <small>3.5 oz</small></li>
-          <li>24 inch Baguette <small>12 oz</small></li>
-          <li>4 inch Con Coc <small>2 oz</small></li>
-          <li>10 inch</li>
-          <li>12 inch</li>
-          <li>Batard</li>
-        </ul>
-      </div>
-
-      <div class="section-divider"><span></span></div>
-
-      <div class="menu-section">
-        <h2>Croissants</h2>
-        <ul>
-          <li>Regular Croissant</li>
-          <li>Mini Croissants</li>
-          <li>Almond Croissant</li>
-          <li>Raisin Croissant</li>
-          <li>Cinnamon Croissant</li>
-          <li>Coconut Croissant</li>
-          <li>Chocolate Croissant</li>
-        </ul>
-      </div>
-
-      <div class="section-divider"><span></span></div>
-
-      <div class="menu-section">
-        <h2>Sweet Bread</h2>
-        <ul>
-          <li>Sweet Roll</li>
-          <li>Taro Bun</li>
-          <li>Coconut Bun</li>
-          <li>Raisin Almond Twisted Bread</li>
-          <li>Mung Bean Bun</li>
-        </ul>
-      </div>
-
-      <div class="section-divider"><span></span></div>
-
-      <div class="menu-section">
-        <h2>Puff Pastries</h2>
-        <ul>
-          <li>Cinnamon Twist</li>
-          <li>Palmier</li>
-          <li>PateChaud</li>
-        </ul>
-      </div>
-
-      <div class="section-divider"><span></span></div>
-
-      <div class="menu-section">
-        <h2>Cookies</h2>
-        <ul>
-          <li>French Almond Cookie</li>
-          <li>French Currant Cookie</li>
-          <li>Coconut Macaron</li>
-        </ul>
-      </div>
-
+      <div class="menu-footer"></div>
     </div>
-    <div class="menu-footer"></div>
-  </div>
+
+  </main>
 
 </body>
 </html>
