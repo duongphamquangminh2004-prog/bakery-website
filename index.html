@@ -7,21 +7,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Cormorant+Garamond:ital,wght@0,500;1,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,700&family=Cormorant+Garamond:ital,wght@0,500;1,600&display=swap" rel="stylesheet">
 
-  <!-- SEO: Descriptive page title with business names, type, and location -->
   <title>An Xuyen Bakery & Q Bakery | Vietnamese Bakery in Seattle Area</title>
-
-  <!-- SEO: Meta description summarizing both bakeries for search results -->
   <meta name="description" content="An Xuyen Bakery and Q Bakery — two beloved Vietnamese bakeries serving SeaTac and Seattle. Fresh bánh mì, pastries, croissants, and coffee rooted in tradition." />
-
-  <!-- SEO: Allow indexing and following all links -->
   <meta name="robots" content="index, follow" />
-
-  <!-- SEO: Canonical URL to establish the authoritative homepage -->
   <link rel="canonical" href="https://duongphamquangminh2004-prog.github.io/bakery-website/" />
-
-  <!-- SEO: Open Graph tags for Facebook, LinkedIn, and social sharing -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="An Xuyen Bakery & Q Bakery | Vietnamese Bakery in Seattle Area" />
   <meta property="og:description" content="Two beloved Vietnamese bakeries serving SeaTac and Seattle. Fresh bánh mì, pastries, croissants, and coffee rooted in tradition." />
@@ -29,15 +20,13 @@
   <meta property="og:site_name" content="An Xuyen Bakery & Q Bakery" />
   <meta property="og:locale" content="en_US" />
   <meta property="og:image" content="https://duongphamquangminh2004-prog.github.io/bakery-website/images/banh-my.jpg" />
-
-  <!-- SEO: Twitter Card tags for sharing on X/Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="An Xuyen Bakery & Q Bakery Seattle WA  | Vietnamese Bakery in Washington" />
+  <meta name="twitter:title" content="An Xuyen Bakery & Q Bakery Seattle WA | Vietnamese Bakery in Washington" />
   <meta name="twitter:description" content="Two beloved Vietnamese bakeries serving SeaTac and Seattle. Fresh bánh mì, pastries, croissants, and coffee rooted in tradition." />
   <meta name="twitter:image" content="https://duongphamquangminh2004-prog.github.io/bakery-website/images/banh-my.jpg" />
   <meta name="geo.region" content="US-WA">
   <meta name="geo.placename" content="Seattle">
-  
+
   <style>
 * {
   box-sizing: border-box;
@@ -46,14 +35,65 @@
 }
 
 body {
+  
   background: #f3e6d0;
   color: #202020;
   font-family: Arial, sans-serif;
   line-height: 1.6;
 }
+/* ── OVERLAY NAV (inside hero) ── */
+.hero-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 22px 36px;
+}
 
+.hero-nav-brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 17px;
+  color: #e2c599;
+  text-decoration: none;
+  letter-spacing: 0.4px;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+
+.hero-nav-links {
+  display: flex;
+  gap: 4px;
+  list-style: none;
+  margin-left: auto;
+}
+
+.hero-nav-links a {
+  display: inline-block;
+  padding: 7px 20px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #ffffff;
+  text-decoration: none;
+  letter-spacing: 0.3px;
+  text-shadow: 0 1px 6px rgba(0,0,0,0.6);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.hero-nav-links a:hover,
+.hero-nav-links a.active {
+  background: rgba(30, 16, 4, 0.55);
+  color: #ffd98a;
+  text-shadow: none;
+}
+
+/* ── HERO ── */
 .hero {
-  min-height: 78vh;
+  position: relative;
+  min-height: 100vh;
   background:
     linear-gradient(rgba(30, 20, 10, 0.38), rgba(30, 20, 10, 0.38)),
     url("images/banh-my.jpg") center center / cover no-repeat;
@@ -122,41 +162,20 @@ body {
   border-radius: 20px;
   padding: 12px;
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.438);
-}
-@keyframes fadeInDown {
-  from {
-    opacity: 0;
-    transform: translateY(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  transition: transform 0.25s ease;
 }
 
 .logos img:hover {
   transform: scale(1.1);
 }
 
-
+/* ── SECTION DIVIDER ── */
 .section-divider {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
   padding: 40px 40px;
-  
 }
 
 .section-divider h2 {
@@ -167,14 +186,14 @@ body {
   margin: 0;
 }
 
-/* QUAN TRỌNG: gạch 2 bên */
 .section-divider .line {
   flex: 1;
   height: 1px;
-  background: #cea775; /* đậm hơn cho dễ thấy */
+  background: #cea775;
   max-width: 15px;
 }
 
+/* ── STORE CARDS ── */
 .store-section {
   max-width: 1100px;
   margin: 0 auto;
@@ -190,20 +209,17 @@ body {
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.329);
   transition: all 0.3s ease;
   animation: fallDown 0.8s ease forwards;
+  opacity: 0;
 }
 
-.store-card:nth-child(1) {
-  animation-delay: 0.6s;
-}
-
-.store-card:nth-child(2) {
-  animation-delay: 0.9s;
-}
+.store-card:nth-child(1) { animation-delay: 0.3s; }
+.store-card:nth-child(2) { animation-delay: 0.5s; }
 
 .store-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 20px 30px rgba(0,0,0,0.15);
 }
+
 .store-content {
   display: flex;
   justify-content: space-between;
@@ -211,36 +227,27 @@ body {
   gap: 28px;
 }
 
-.store-text {
-  flex: 1;
-  min-width: 0;
-}
+.store-text { flex: 1; min-width: 0; }
 
-.store-card h2 {
-  font-size: clamp(28px, 4vw, 44px);
-  margin-bottom: 14px;
-}
+.store-card h2 { font-size: clamp(28px, 4vw, 44px); margin-bottom: 14px; }
 
 .store-card .anxuyen-title,
 .store-card .q-title {
- font-family: 'Playfair Display', serif;
-      font-weight: 700;
-      color: #5f381f; /* dark brown like in the image */
-      font-size: 30px;
-      line-height: 1.1;
-      letter-spacing: 0.5px;
-    }
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  color: #5f381f;
+  font-size: 30px;
+  line-height: 1.1;
+  letter-spacing: 0.5px;
+}
 
 .store-card p {
- font-size: 17px;
+  font-size: 17px;
   color: #6b5a4d;
   line-height: 1.7;
 }
 
-.store-card p strong {
-  color: #6b5a4d;
-  font-weight: 700;
-}
+.store-card p strong { color: #6b5a4d; font-weight: 700; }
 
 .actions {
   display: flex;
@@ -250,71 +257,41 @@ body {
   flex-wrap: wrap;
 }
 
-.btn,
-.icon-btn {
-  border: none;
-  text-decoration: none;
-  border-radius: 14px;
-  min-width: unset;
-  min-height: unset;
-  padding: 12px 18px;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: bold;
-  transition: all 0.25s ease;
-}
-
-
-.btn:hover, .icon-btn:hover {
-  transform: scale(1.1);
-  opacity: 0.9;
-}
-
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-
   height: 34px;
   padding: 0 16px;
-  min-width: unset;
-  min-height: unset;
-
   background: #4b2e1f;
   color: #ffffff;
   border: none;
   border-radius: 999px;
   text-decoration: none;
-
   font-size: 13px;
   font-weight: 500;
   line-height: 1;
-
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
   transition: all 0.25s ease;
 }
 
+.btn:hover { transform: scale(1.1); opacity: 0.9; }
 
 .icon-btn {
   width: 50px;
   height: 50px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   background: #f5efe6;
   border: 1px solid #e2b478;
   border-radius: 50%;
-
   text-decoration: none;
+  transition: transform 0.25s ease;
 }
 
-.icon-btn i {
-  color: #caa25d;
-  font-size: 15px;
-}
+.icon-btn:hover { transform: scale(1.1); }
+.icon-btn i { color: #caa25d; font-size: 15px; }
 
 .store-logo {
   flex-shrink: 0;
@@ -327,30 +304,151 @@ body {
   width: min(220px, 32vw);
   height: auto;
   background: #fff;
-  padding: 12px;
-  border-radius: 16px;
   padding: 10px;
-   box-shadow: 
-    0 8px 20px rgba(0, 0, 0, 0.164),
-    0 20px 50px rgba(0, 0, 0, 0.199);
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.164), 0 20px 50px rgba(0,0,0,0.199);
   transition: all 0.3s ease;
 }
 
 .store-logo img:hover {
   transform: translateY(-4px);
-  box-shadow: 
-    0 12px 30px rgba(0, 0, 0, 0.178),
-    0 25px 60px rgba(0, 0, 0, 0.185);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.178), 0 25px 60px rgba(0,0,0,0.185);
 }
 
+/* ── OUR STORY SECTION ── */
+#our-story {
+  background: #1e1209;
+  color: #e8d5b8;
+  padding: 90px 20px 80px;
+  scroll-margin-top: 58px;
+}
 
+.story-inner {
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.story-eyebrow {
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  letter-spacing: 4px;
+  color: #c49a4e;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+.story-heading {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(36px, 6vw, 64px);
+  font-weight: 700;
+  color: #f0e0c0;
+  line-height: 1.1;
+  margin-bottom: 14px;
+}
+
+.story-tagline {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: clamp(18px, 2.5vw, 23px);
+  color: #b8966a;
+  margin-bottom: 36px;
+}
+
+.story-rule {
+  width: 60px;
+  height: 2px;
+  background: #c49a4e;
+  border: none;
+  margin-bottom: 44px;
+}
+
+.story-body {
+  font-size: clamp(16px, 1.8vw, 19px);
+  line-height: 1.85;
+  color: #cfc0a4;
+  margin-bottom: 28px;
+}
+
+/* Timeline */
+.timeline {
+  margin-top: 50px;
+  position: relative;
+  padding-left: 36px;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 8px;
+  top: 10px;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, #c49a4e 0%, rgba(196,154,78,0.15) 100%);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 44px;
+}
+
+.timeline-item:last-child { margin-bottom: 0; }
+
+.timeline-dot {
+  position: absolute;
+  left: -32px;
+  top: 4px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #c49a4e;
+  border: 2px solid #1e1209;
+  box-shadow: 0 0 0 3px rgba(196,154,78,0.25);
+}
+
+.timeline-year {
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  letter-spacing: 3px;
+  color: #c49a4e;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.timeline-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #f0e0c0;
+  margin-bottom: 8px;
+}
+
+.timeline-desc {
+  font-size: 16px;
+  line-height: 1.75;
+  color: #b8a88a;
+}
+
+/* Closing quote */
+.story-quote {
+  margin-top: 60px;
+  border-left: 3px solid #c49a4e;
+  padding: 10px 0 10px 28px;
+}
+
+.story-quote p {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: clamp(18px, 2.2vw, 22px);
+  line-height: 1.7;
+  color: #d4bc96;
+}
+
+/* ── FOOTER ── */
 .footer {
-  background: #583523; /* nâu đậm */
+  background: #583523;
   color: #f3e6d8;
-
   text-align: center;
   padding: 18px 12px;
-
   font-size: 14px;
 }
 
@@ -359,109 +457,71 @@ body {
   color: #d8c2a8;
   margin-top: 4px;
 }
-.hero h1,
-.logos img,
-.store-card {
-  opacity: 0;
-  animation: fallDown 0.8s ease forwards;
-}
 
-.store-card,
-.btn,
-.icon-btn,
-.logos img {
-  transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease;
-}
-
-
+/* ── ANIMATIONS ── */
 @keyframes fallDown {
-  from {
-    opacity: 0;
-    transform: translateY(-50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(-50px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
+/* ── RESPONSIVE ── */
 @media (max-width: 768px) {
-  .hero {
-    min-height: auto;
-    padding: 32px 16px;
-  }
+  .navbar { padding: 0 16px; }
+  .navbar-brand { font-size: 14px; }
+  .navbar-links a { padding: 6px 12px; font-size: 13px; }
 
-  .hero h1 {
-    margin-bottom: 18px;
-  }
+  .hero { min-height: auto; padding: 60px 16px 40px; }
+  .hero-nav { padding: 16px 18px; }
+  .logos { gap: 16px; }
 
-  .logos {
-    gap: 16px;
-  }
+  .store-section { padding: 24px 14px 40px; }
+  .store-card { padding: 20px; }
+  .store-content { flex-direction: column; align-items: center; }
+  .store-text { width: 100%; }
+  .store-logo img { width: min(180px, 55vw); }
 
-  .store-section {
-    padding: 24px 14px 40px;
-  }
+  #our-story { padding: 70px 20px 60px; }
+  .timeline { padding-left: 28px; }
+  .timeline-dot { left: -26px; }
 
-  .store-card {
-    padding: 20px;
-  }
-
-  .store-content {
-    flex-direction: column;
-    align-items: center;
-    text-align: left;
-  }
-
-  .store-text {
-    width: 100%;
-  }
-
-  .store-logo img {
-    width: min(180px, 55vw);
-  }
-
-  .btn,
-  .icon-btn {
-    min-width: unset;
-    min-height: unset;
-  }
-
-.store-card:active,
-.btn:active,
-.icon-btn:active,
-.logos img:active {
-  transform: scale(0.97);
+  .store-card:active,
+  .btn:active,
+  .icon-btn:active,
+  .logos img:active { transform: scale(0.97); }
 }
-} 
   </style>
 </head>
 <body>
 
-<!-- SEO: hero section serves as the page's primary landmark -->
-<header>
+<!-- HERO / HOME -->
+<header id="home">
   <section class="hero">
+    <!-- Overlay nav sits inside the hero image -->
+    <nav class="hero-nav" aria-label="Main navigation">
+      <ul class="hero-nav-links">
+        <li><a href="#home" class="active" onclick="setActive(this)">Home</a></li>
+        <li><a href="our-story.html">Our Story</a></li>
+      </ul>
+    </nav>
     <div class="hero-overlay">
-      <p class="hero-topline">VIETNAMESE BAKERY  SEATTLE AREA</p>
-
-      <!-- SEO: Single H1 clearly describing the page for search engines -->
+      <p class="hero-topline">VIETNAMESE BAKERY · SEATTLE AREA</p>
       <h1 class="hero-title">
         Baked with
         <span class="hero-script">love,</span>
         served fresh daily.
       </h1>
-
       <p class="hero-subtext">
         Two beloved bakeries. One family of flavors.<br>
-        Bánh mì, pastries & coffee rooted in tradition.
+        Bánh mì, pastries &amp; coffee rooted in tradition.
       </p>
+      
     </div>
   </section>
 </header>
 
-<!-- SEO: main landmark wraps all primary page content -->
 <main>
 
+  <!-- STORE LOCATIONS -->
   <div class="section-divider" id="stores">
     <span class="line"></span>
     <h2>Our Locations</h2>
@@ -478,24 +538,19 @@ body {
           <p><strong>Time:</strong> Monday – Sunday: 5:00 AM – 5:00 PM</p>
           <p><strong>Fax:</strong> 206 322 4168</p>
           <p><strong>Order (test only):</strong> 206 437 1368</p>
-
           <div class="actions">
             <a class="btn" href="menu-an-xuyen.html">View Menu</a>
-
-            <a class="icon-btn phone" href="tel:+12062447985">
-              <i class="fa-solid fa-phone"></i>   
+            <a class="icon-btn phone" href="tel:+12062447985" aria-label="Call An Xuyen Bakery">
+              <i class="fa-solid fa-phone"></i>
             </a>
-
-            <a class="icon-btn map" href="https://maps.google.com/?q=19043+International+Blvd+SeaTac+WA+98188" target="_blank">
+            <a class="icon-btn map" href="https://maps.google.com/?q=19043+International+Blvd+SeaTac+WA+98188" target="_blank" aria-label="Get directions to An Xuyen Bakery">
               <i class="fa-solid fa-location-dot"></i>
             </a>
-
-            <a class="icon-btn email" href="mailto:anxuyenfb@comcast.net">
+            <a class="icon-btn email" href="/cdn-cgi/l/email-protection#7d1c1305080418131b1f3d1e12101e1c0e0953131809" aria-label="Email An Xuyen Bakery">
               <i class="fa-regular fa-envelope"></i>
             </a>
           </div>
         </div>
-
         <div class="store-logo">
           <img src="images/an-xuyen-logo.jpg.jpg" alt="An Xuyen Bakery logo — Vietnamese bakery in SeaTac, WA">
         </div>
@@ -504,7 +559,6 @@ body {
 
     <div class="store-card">
       <div class="store-content">
-
         <div class="store-text">
           <h2 class="q-title">Q Bakery Sandwiches</h2>
           <p>Vietnamese sandwiches, coffee, and smoothies in Seattle.</p>
@@ -512,34 +566,30 @@ body {
           <p><strong>Time:</strong> Monday – Sunday: 7:00 AM – 5:00 PM</p>
           <div class="actions">
             <a class="btn" href="file/menu-bakery.pdf" target="_blank" rel="noopener noreferrer">View Menu</a>
-            <a class="icon-btn phone" href="tel:+12067259193">
+            <a class="icon-btn phone" href="tel:+12067259193" aria-label="Call Q Bakery">
               <i class="fas fa-phone"></i>
             </a>
-
-            <a class="icon-btn map" href="https://maps.google.com/?q=3818+S+Graham+St+%23B+Seattle+WA+98118" target="_blank">
+            <a class="icon-btn map" href="https://maps.google.com/?q=3818+S+Graham+St+%23B+Seattle+WA+98118" target="_blank" aria-label="Get directions to Q Bakery">
               <i class="fas fa-location-dot"></i>
             </a>
-
-            <a class="icon-btn email" href="mailto:qbakeryseattle@gmail.com">
+            <a class="icon-btn email" href="/cdn-cgi/l/email-protection#dcadbebdb7b9aea5afb9bda8a8b0b99cbbb1bdb5b0f2bfb3b1" aria-label="Email Q Bakery">
               <i class="fa-regular fa-envelope"></i>
             </a>
           </div>
         </div>
-
         <div class="store-logo">
           <img src="images/q-bakery-remove-logo.png" alt="Q Bakery Sandwiches logo — Vietnamese bakery in Seattle, WA">
         </div>
-
       </div>
     </div>
   </section>
 
+
 </main>
 
 <footer class="footer">
-  <p><strong>An Xuyen Bakery & Q Bakery</strong> — The best choice in town.</p>
+  <p><strong>An Xuyen Bakery &amp; Q Bakery</strong> — The best choice in town.</p>
   <p class="footer-sub">Made with ♥ for the Seattle Vietnamese community</p>
 </footer>
 
-</body>
-</html>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></sc

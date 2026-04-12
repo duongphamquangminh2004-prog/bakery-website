@@ -4,19 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-  <!-- SEO: Page title with business name, page type, and location -->
   <title>Menu – An Xuyen Bakery | Vietnamese Bakery in Seattle Area</title>
-
-  <!-- SEO: Meta description summarizing the page for search engines -->
   <meta name="description" content="Browse the full menu at An Xuyen Bakery — featuring French bread, croissants, sweet bread, puff pastries, and cookies. A Vietnamese bakery serving the Seattle area." />
-
-  <!-- SEO: Allow indexing and following links -->
   <meta name="robots" content="index, follow" />
-
-  <!-- SEO: Canonical URL to prevent duplicate content issues -->
   <link rel="canonical" href="https://duongphamquangminh2004-prog.github.io/bakery-website/menu-an-xuyen.html" />
 
-  <!-- SEO: Open Graph tags for social sharing (Facebook, LinkedIn, etc.) -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Menu – An Xuyen Bakery | Vietnamese Bakery in Seattle Area" />
   <meta property="og:description" content="Browse the full menu at An Xuyen Bakery — French bread, croissants, sweet bread, puff pastries, and cookies. A Vietnamese bakery serving the Seattle area." />
@@ -24,12 +16,13 @@
   <meta property="og:site_name" content="An Xuyen Bakery" />
   <meta property="og:locale" content="en_US" />
 
-  <!-- SEO: Twitter Card tags for sharing on Twitter/X -->
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Menu – An Xuyen Bakery | Vietnamese Bakery in Seattle Area" />
   <meta name="twitter:description" content="Browse the full menu at An Xuyen Bakery — French bread, croissants, sweet bread, puff pastries, and cookies. A Vietnamese bakery serving the Seattle area." />
 
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Jost:wght@300;400&display=swap" rel="stylesheet">
 
   <style>
     *, *::before, *::after {
@@ -39,98 +32,121 @@
     }
 
     :root {
+      --bg: #121110;
+      --bg-2: #171513;
       --cream: #f5efe4;
       --parchment: #ede3d0;
-      --gold: #b8975a;
-      --gold-lt: #d4b07a;
-      --espresso: #2c1a0e;
+      --text-dark: #2b1a10;
       --brown: #5c3d22;
-      --muted: #6b4a2e;
+      --muted: #7a6450;
+      --line: rgba(200, 146, 87, 0.24);
+      --accent: #c89257;
+      --accent-soft: #e3b078;
+      --max-width: 620px;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
       font-family: 'Jost', sans-serif;
       font-weight: 300;
-      background-color: var(--espresso);
-      background-image:
-        repeating-linear-gradient(
-          0deg,
-          transparent,
-          transparent 40px,
-          rgba(255,255,255,0.015) 40px,
-          rgba(255,255,255,0.015) 41px
-        ),
-        repeating-linear-gradient(
-          90deg,
-          transparent,
-          transparent 40px,
-          rgba(255,255,255,0.015) 40px,
-          rgba(255,255,255,0.015) 41px
-        );
+      color: var(--text-dark);
       min-height: 100vh;
-      padding: 50px 20px 60px;
-      color: var(--espresso);
+      background:
+    radial-gradient(circle at top left, rgba(200, 146, 87, 0.08), transparent 28%),
+    linear-gradient(180deg, #362f28 0%, #110f0e 100%);
+
+
+      padding: 34px 18px 56px;
     }
 
-    .back {
+    .page-shell {
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: flex-start;
+      margin-bottom: 34px;
+    }
+
+    .back-link {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
+      gap: 10px;
       text-decoration: none;
-      font-family: 'Jost', sans-serif;
-      font-weight: 400;
-      font-size: 11px;
-      letter-spacing: 0.18em;
+      color: #e6d7c3;
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.24em;
       text-transform: uppercase;
-      color: var(--gold-lt);
-      border: 1px solid rgba(184,151,90,0.35);
-      padding: 9px 18px;
-      border-radius: 2px;
-      transition: background 0.25s, color 0.25s;
-      margin-bottom: 48px;
+      padding: 8px 13px;
+      border-radius: 999px;
+      border: 1px solid rgba(230, 215, 195, 0.14);
+      background: rgba(255,255,255,0.02);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 28px rgba(0,0,0,0.2);
+      transition: color 0.25s ease, border-color 0.25s ease, background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
     }
 
-    .back:hover {
-      background: rgba(184,151,90,0.12);
-      color: #e8d4a8;
-    }
-
-    .back::before {
-      content: '←';
-      font-size: 13px;
+    .back-link:hover {
+      color: #fff8ef;
+      border-color: rgba(230, 215, 195, 0.28);
+      background: rgba(255,255,255,0.045);
+      transform: translateY(-1px);
+      box-shadow: 0 12px 34px rgba(0,0,0,0.24);
     }
 
     .menu-container {
-      max-width: 560px;
+      max-width: var(--max-width);
       margin: 0 auto;
       background: var(--cream);
-      border-radius: 4px;
+      border-radius: 28px;
       overflow: hidden;
       position: relative;
+      box-shadow:
+        0 24px 80px rgba(0,0,0,0.32),
+        0 6px 24px rgba(0,0,0,0.18);
+      border: 1px solid rgba(255,255,255,0.05);
     }
 
     .menu-container::before {
-      content: '';
-      display: block;
-      height: 5px;
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 28px;
+      padding: 1px;
       background: linear-gradient(90deg, var(--brown), var(--gold), var(--gold-lt), var(--gold), var(--brown));
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
+    }
+
+    .menu-top-line,
+    .menu-footer {
+      height: 5px;
+      background: linear-gradient(90deg, #6c4827, var(--accent), var(--accent-soft), var(--accent), #6c4827);
     }
 
     .menu-inner {
-      padding: 52px 52px 60px;
       position: relative;
+      padding: 54px 52px 58px;
     }
 
     .menu-inner::before,
     .menu-inner::after {
-      content: '';
-      display: block;
-      width: 60px;
-      height: 60px;
+      content: "";
       position: absolute;
-      border-color: var(--gold);
+      width: 64px;
+      height: 64px;
       border-style: solid;
-      opacity: 0.45;
+      border-color: rgba(200, 146, 87, 0.55);
+      opacity: 0.55;
+      pointer-events: none;
     }
 
     .menu-inner::before {
@@ -140,8 +156,8 @@
     }
 
     .menu-inner::after {
-      bottom: 24px;
       right: 24px;
+      bottom: 24px;
       border-width: 0 1px 1px 0;
     }
 
@@ -150,42 +166,51 @@
       margin-bottom: 38px;
     }
 
+    .eyebrow {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 14px;
+    }
+
     h1 {
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 400;
-      font-size: 58px;
-      letter-spacing: 0.06em;
-      color: var(--espresso);
-      line-height: 1;
-      margin-bottom: 18px;
+      font-family: "Cormorant Garamond", serif;
+      font-weight: 500;
+      font-size: clamp(3rem, 7vw, 4.3rem);
+      line-height: 0.95;
+      letter-spacing: -0.03em;
+      color: var(--text-dark);
+      margin-bottom: 16px;
     }
 
     .header-rule {
       display: flex;
       align-items: center;
-      gap: 14px;
       justify-content: center;
+      gap: 14px;
     }
 
     .header-rule span {
-      display: block;
-      height: 1px;
       width: 60px;
-      background: var(--gold);
-      opacity: 0.6;
+      height: 1px;
+      background: var(--accent);
+      opacity: 0.55;
+      display: block;
     }
 
     .header-rule em {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: "Cormorant Garamond", serif;
       font-style: italic;
-      font-size: 15px;
-      color: var(--gold);
-      letter-spacing: 0.1em;
+      font-size: 1.05rem;
+      color: var(--accent);
+      letter-spacing: 0.08em;
     }
 
     .menu-section {
-      margin-bottom: 28px;
       text-align: center;
+      margin-bottom: 28px;
     }
 
     .menu-section:last-child {
@@ -193,26 +218,25 @@
     }
 
     .menu-section h2 {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.72rem;
       font-weight: 600;
-      font-size: 11px;
       letter-spacing: 0.28em;
       text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 12px;
+      color: var(--accent);
+      margin-bottom: 14px;
       position: relative;
       display: inline-block;
     }
 
     .menu-section h2::before,
     .menu-section h2::after {
-      content: '';
-      display: block;
+      content: "";
       position: absolute;
       top: 50%;
       width: 28px;
       height: 1px;
-      background: var(--gold-lt);
+      background: var(--accent-soft);
       opacity: 0.6;
     }
 
@@ -226,28 +250,31 @@
 
     ul {
       list-style: none;
-      padding: 0;
     }
 
-   li {
-  font-family: 'Cormorant Garamond', serif;
-  font-weight: 500;
-  font-size: 21px;
-  letter-spacing: 0.02em;
-  color: var(--espresso);
-  padding: 3px 0;
-  line-height: 1.4;
-}
+    li {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.45rem;
+      font-weight: 500;
+      line-height: 1.38;
+      letter-spacing: 0.01em;
+      color: var(--text-dark);
+      padding: 3px 0;
+      transition: color 0.2s ease, transform 0.2s ease;
+    }
 
     li:hover {
       color: var(--brown);
+      transform: translateY(-1px);
     }
 
     li small {
-      color: var(--muted);
-      font-size: 13px;
+      font-family: "Jost", sans-serif;
+      font-size: 0.78rem;
       font-weight: 500;
-      margin-left: 4px;
+      color: var(--muted);
+      margin-left: 6px;
+      letter-spacing: 0.04em;
     }
 
     .section-divider {
@@ -260,135 +287,199 @@
 
     .section-divider::before,
     .section-divider::after {
-      content: '';
+      content: "";
       display: block;
       flex: 1;
       height: 1px;
-      background: var(--gold);
-      opacity: 0.2;
+      background: var(--line);
     }
 
     .section-divider span {
-      width: 5px;
-      height: 5px;
-      background: var(--gold);
+      width: 6px;
+      height: 6px;
       border-radius: 50%;
-      opacity: 0.5;
+      background: var(--accent);
+      opacity: 0.65;
     }
 
-    .menu-footer {
-      height: 5px;
-      background: linear-gradient(90deg, var(--brown), var(--gold), var(--gold-lt), var(--gold), var(--brown));
-    }
-
-    @media (max-width: 480px) {
-      .menu-inner {
-        padding: 36px 28px 44px;
+    @media (max-width: 768px) {
+      body {
+        padding: 22px 14px 40px;
       }
 
-      h1 {
-        font-size: 44px;
+      .topbar {
+        margin-bottom: 22px;
+      }
+
+      .menu-inner {
+        padding: 40px 26px 42px;
+      }
+
+      .menu-inner::before,
+      .menu-inner::after {
+        width: 42px;
+        height: 42px;
+      }
+
+      .menu-inner::before {
+        top: 16px;
+        left: 16px;
+      }
+
+      .menu-inner::after {
+        right: 16px;
+        bottom: 16px;
+      }
+
+      .header-rule span {
+        width: 42px;
       }
 
       li {
-        font-size: 17px;
+        font-size: 1.2rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .back-link {
+        gap: 8px;
+        font-size: 0.6rem;
+        letter-spacing: 0.2em;
+        padding: 7px 11px;
+      }
+
+      .menu-container {
+        border-radius: 22px;
+      }
+
+      .menu-inner {
+        padding: 34px 20px 36px;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+      }
+
+      .eyebrow {
+        font-size: 0.66rem;
+      }
+
+      .header-rule em {
+        font-size: 0.96rem;
+      }
+
+      .menu-section h2 {
+        font-size: 0.66rem;
+        letter-spacing: 0.22em;
+      }
+
+      .menu-section h2::before,
+      .menu-section h2::after {
+        width: 18px;
+      }
+
+      li {
+        font-size: 1.08rem;
+        line-height: 1.42;
+      }
+
+      li small {
+        display: inline-block;
+        margin-left: 4px;
+        font-size: 0.72rem;
       }
     }
   </style>
 </head>
 
 <body>
-
-  <a class="back" href="index.html">Back</a>
-
-  <!-- SEO: main landmark wraps the primary page content -->
-  <main>
-
-    <div class="menu-container">
-      <div class="menu-inner">
-
-        <header class="menu-header">
-          <!-- SEO: Single H1 describing the page clearly for search engines -->
-          <h1>Menu</h1>
-          <div class="header-rule">
-            <span></span>
-            <em>An Xuyen</em>
-            <span></span>
-          </div>
-        </header>
-
-        <!-- SEO: article wraps the full menu as a self-contained piece of content -->
-        <article>
-
-          <section class="menu-section">
-            <h2>French Bread</h2>
-            <ul>
-              <li>8 inch Demi Baguette <small>3.5 oz</small></li>
-              <li>24 inch Baguette <small>12 oz</small></li>
-              <li>4 inch Con Coc <small>2 oz</small></li>
-              <li>10 inch</li>
-              <li>12 inch</li>
-              <li>Batard</li>
-            </ul>
-          </section>
-
-          <div class="section-divider"><span></span></div>
-
-          <section class="menu-section">
-            <h2>Croissants</h2>
-            <ul>
-              <li>Regular Croissant</li>
-              <li>Mini Croissants</li>
-              <li>Almond Croissant</li>
-              <li>Raisin Croissant</li>
-              <li>Cinnamon Croissant</li>
-              <li>Coconut Croissant</li>
-              <li>Chocolate Croissant</li>
-            </ul>
-          </section>
-
-          <div class="section-divider"><span></span></div>
-
-          <section class="menu-section">
-            <h2>Sweet Bread</h2>
-            <ul>
-              <li>Sweet Roll</li>
-              <li>Taro Bun</li>
-              <li>Coconut Bun</li>
-              <li>Raisin Almond Twisted Bread</li>
-              <li>Mung Bean Bun</li>
-            </ul>
-          </section>
-
-          <div class="section-divider"><span></span></div>
-
-          <section class="menu-section">
-            <h2>Puff Pastries</h2>
-            <ul>
-              <li>Cinnamon Twist</li>
-              <li>Palmier</li>
-              <li>PateChaud</li>
-            </ul>
-          </section>
-
-          <div class="section-divider"><span></span></div>
-
-          <section class="menu-section">
-            <h2>Cookies</h2>
-            <ul>
-              <li>French Almond Cookie</li>
-              <li>French Currant Cookie</li>
-              <li>Coconut Macaron</li>
-            </ul>
-          </section>
-
-        </article>
-
-      </div>
-      <div class="menu-footer"></div>
+  <div class="page-shell">
+    <div class="topbar">
+      <a class="back-link" href="index.html">
+        <span>←</span>
+        <span>Back</span>
+      </a>
     </div>
 
-  </main>
+    <main>
+      <div class="menu-container">
+        <div class="menu-top-line"></div>
 
-</body>
-</html>
+        <div class="menu-inner">
+          <header class="menu-header">
+            <div class="eyebrow">An Xuyen Bakery</div>
+            <h1>Menu</h1>
+            <div class="header-rule">
+              <span></span>
+              <em>SeaTac</em>
+              <span></span>
+            </div>
+          </header>
+
+          <article>
+            <section class="menu-section">
+              <h2>French Bread</h2>
+              <ul>
+                <li>8 inch Demi Baguette <small>3.5 oz</small></li>
+                <li>24 inch Baguette <small>12 oz</small></li>
+                <li>4 inch Con Coc <small>2 oz</small></li>
+                <li>10 inch</li>
+                <li>12 inch</li>
+                <li>Batard</li>
+              </ul>
+            </section>
+
+            <div class="section-divider"><span></span></div>
+
+            <section class="menu-section">
+              <h2>Croissants</h2>
+              <ul>
+                <li>Regular Croissant</li>
+                <li>Mini Croissants</li>
+                <li>Almond Croissant</li>
+                <li>Raisin Croissant</li>
+                <li>Cinnamon Croissant</li>
+                <li>Coconut Croissant</li>
+                <li>Chocolate Croissant</li>
+              </ul>
+            </section>
+
+            <div class="section-divider"><span></span></div>
+
+            <section class="menu-section">
+              <h2>Sweet Bread</h2>
+              <ul>
+                <li>Sweet Roll</li>
+                <li>Taro Bun</li>
+                <li>Coconut Bun</li>
+                <li>Raisin Almond Twisted Bread</li>
+                <li>Mung Bean Bun</li>
+              </ul>
+            </section>
+
+            <div class="section-divider"><span></span></div>
+
+            <section class="menu-section">
+              <h2>Puff Pastries</h2>
+              <ul>
+                <li>Cinnamon Twist</li>
+                <li>Palmier</li>
+                <li>PateChaud</li>
+              </ul>
+            </section>
+
+            <div class="section-divider"><span></span></div>
+
+            <section class="menu-section">
+              <h2>Cookies</h2>
+              <ul>
+                <li>French Almond Cookie</li>
+                <li>French Currant Cookie</li>
+                <li>Coconut Macaron</li>
+              </ul>
+            </section>
+          </article>
+        </div>
+
+        <div class="menu-footer"></div>
+      </div>

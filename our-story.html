@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Story - An Xuyen</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #121110;
+      --panel: #171513;
+      --text: #f5f1ea;
+      --muted: #c7beb2;
+      --soft: #9f9589;
+      --line: rgba(203, 154, 92, 0.28);
+      --accent: #c89257;
+      --accent-soft: #e3b078;
+      --max: 1220px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Inter", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(200, 146, 87, 0.08), transparent 28%),
+        linear-gradient(180deg, #161412 0%, #110f0e 100%);
+      color: var(--text);
+      line-height: 1.75;
+    }
+
+    .back-link {
+      position: fixed;
+      top: 18px;
+      left: 18px;
+      z-index: 1000;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: #e6d7c3;
+      font-family: "Inter", sans-serif;
+      font-size: 0.66rem;
+      font-weight: 500;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      padding: 7px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(230, 215, 195, 0.14);
+      background: rgba(255,255,255,0.02);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 28px rgba(0,0,0,0.2);
+      transition: color 0.25s ease, border-color 0.25s ease, background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .back-link:hover {
+      color: #fff8ef;
+      border-color: rgba(230, 215, 195, 0.28);
+      background: rgba(255,255,255,0.045);
+      transform: translateY(-1px);
+      box-shadow: 0 12px 34px rgba(0,0,0,0.24);
+      text-decoration: none;
+    }
+
+    .story-section {
+      width: 100%;
+      min-height: 100vh;
+      padding: 110px 24px 80px;
+    }
+
+    .story-wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 72px;
+      align-items: start;
+    }
+
+    .eyebrow {
+      font-family: "Inter", sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: #c89257;
+      font-weight: 500;
+      margin-bottom: 18px;
+      opacity: 0.9;
+    }
+
+    h1 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(3.4rem, 7vw, 6rem);
+      line-height: 0.95;
+      font-weight: 600;
+      letter-spacing: -0.03em;
+      margin-bottom: 18px;
+      max-width: 780px;
+    }
+
+    .subtitle {
+      font-family: "Cormorant Garamond", serif;
+      font-style: italic;
+      font-size: clamp(1.4rem, 2vw, 2rem);
+      color: var(--muted);
+      margin-bottom: 34px;
+    }
+
+    .accent-line {
+      width: 82px;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--accent-soft), var(--accent));
+      margin-bottom: 44px;
+      box-shadow: 0 0 22px rgba(200, 146, 87, 0.28);
+    }
+
+    .lead p,
+    .closing {
+      font-size: 1.18rem;
+      color: #ddd4c9;
+    }
+
+    .lead p {
+      margin-bottom: 26px;
+      max-width: 760px;
+    }
+
+    .highlight {
+      color: inherit;
+      font-weight: 400;
+    }
+
+    .quote-box {
+      margin-top: 46px;
+      padding-left: 24px;
+      border-left: 4px solid var(--accent);
+    }
+
+    .closing {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(1.45rem, 2.2vw, 2.2rem);
+      line-height: 1.5;
+      font-style: italic;
+      color: #f2e8db;
+    }
+
+    .timeline-card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 28px;
+      padding: 34px 28px;
+      position: relative;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 20px 70px rgba(0,0,0,0.28);
+    }
+
+    .timeline-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 28px;
+      padding: 1px;
+      background: linear-gradient(180deg, rgba(227,176,120,0.22), rgba(255,255,255,0.03));
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
+    }
+
+    .timeline {
+      position: relative;
+      padding-left: 34px;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 10px;
+      top: 8px;
+      bottom: 8px;
+      width: 1px;
+      background: var(--line);
+    }
+
+    .item {
+      position: relative;
+      padding-bottom: 44px;
+    }
+
+    .item:last-child {
+      padding-bottom: 0;
+    }
+
+    .dot {
+      position: absolute;
+      left: -34px;
+      top: 6px;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--accent);
+      border: 3px solid #6e4c29;
+      box-shadow: 0 0 0 6px rgba(200, 146, 87, 0.08);
+    }
+
+    .meta {
+      font-family: "Inter", sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: #c89257;
+      font-weight: 500;
+      margin-bottom: 10px;
+      opacity: 0.9;
+    }
+
+    .item h3 {
+      font-size: 1.95rem;
+      line-height: 1.15;
+      margin-bottom: 10px;
+      color: #fffaf4;
+      font-family: "Cormorant Garamond", serif;
+      font-weight: 600;
+    }
+
+    .item p {
+      color: var(--muted);
+      font-size: 1.04rem;
+      line-height: 1.8;
+    }
+
+    @media (max-width: 980px) {
+      .story-wrap {
+        grid-template-columns: 1fr;
+        gap: 42px;
+      }
+
+      .story-section {
+        padding: 90px 20px 60px;
+      }
+
+      .timeline-card {
+        padding: 28px 22px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .back-link {
+        top: 10px;
+        left: 10px;
+        gap: 8px;
+        font-size: 0.6rem;
+        letter-spacing: 0.2em;
+        padding: 6px 10px;
+      }
+
+      .story-section {
+        padding: 80px 16px 50px;
+      }
+
+      .story-wrap {
+        gap: 30px;
+      }
+
+      h1 {
+        font-size: 2.6rem;
+        line-height: 1.05;
+      }
+
+      .subtitle {
+        font-size: 1.1rem;
+        margin-bottom: 26px;
+      }
+
+      .lead p,
+      .closing,
+      .item p {
+        font-size: 1rem;
+      }
+
+      .item h3 {
+        font-size: 1.6rem;
+      }
+
+      .timeline {
+        padding-left: 28px;
+      }
+
+      .dot {
+        left: -28px;
+        width: 16px;
+        height: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a href="index.html" class="back-link"><span>←</span><span>Back</span></a>
+
+  <section class="story-section" id="our-story">
+    <div class="story-wrap">
+      <div class="story-left">
+        <div class="eyebrow">Our Story</div>
+        <h1>From Ca Mau to Seattle</h1>
+        <p class="subtitle">A family tradition, carried across generations and oceans.</p>
+        <div class="accent-line"></div>
+
+        <div class="lead">
+          <p>
+            Every loaf has a beginning. Ours starts in <span class="highlight">1963</span>, in the warm and bustling streets of <span class="highlight">Ca Mau, Vietnam</span>, where a small family bakery filled the neighborhood with the scent of fresh bread each morning. Our founder, <span class="highlight">Mr. Quang</span>, learned the craft of baking from his father, continuing a proud and longstanding family tradition.
+          </p>
+
+          <p>
+            That love for bread traveled with him. In <span class="highlight">1990</span>, Mr. Quang brought his family’s legacy to Seattle, sharing not only bánh mì, but also the warmth of home, the comfort of memory, and the spirit of Vietnamese hospitality.
+          </p>
+        </div>
+
+        <div class="quote-box">
+          <p class="closing">
+            This is more than bread. It is a story of dedication, family, and the joy of sharing Vietnamese culture through food.
+          </p>
+        </div>
+      </div>
+
+      <aside class="timeline-card">
+        <div class="timeline">
+          <article class="item">
+            <span class="dot"></span>
+            <div class="meta">1963 · Ca Mau, Vietnam</div>
+            <h3>A family bakery is born</h3>
+            <p>
+              Mr. Quang’s father founded a small bakery, passing down the craft, discipline, and pride of traditional Vietnamese breadmaking to the next generation.
+            </p>
+          </article>
+
+          <article class="item">
+            <span class="dot"></span>
+            <div class="meta">1990 · Seattle, WA</div>
+            <h3>An Xuyen Bakery opens</h3>
+            <p>
+              Bringing authentic flavors and family recipes to the Pacific Northwest, An Xuyen quickly became a beloved neighborhood destination.
+            </p>
+          </article>
+
+          <article class="item">
+            <span class="dot"></span>
+            <div class="meta">2009 · Seattle, WA</div>
+            <h3>Q Bakery Sandwiches opens</h3>
+            <p>
+              A natural next chapter rooted in the same family spirit, expanding the tradition with fresh bánh mì, pastries, and everyday comfort.
+            </p>
+          </article>
+        </div>
+      </aside>
+    </div>
+  </section>
+</body>
+</html>
