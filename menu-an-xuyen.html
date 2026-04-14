@@ -1,5 +1,7 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
@@ -26,380 +28,937 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Jost:wght@300;400&display=swap" rel="stylesheet">
 
+
   <style>
+
     *, *::before, *::after {
+
       box-sizing: border-box;
+
       margin: 0;
+
       padding: 0;
+
     }
 
-    :root {
-      --bg: #121110;
-      --bg-2: #171513;
-      --cream: #f5efe4;
-      --parchment: #ede3d0;
-      --text-dark: #2b1a10;
-      --brown: #5c3d22;
-      --muted: #7a6450;
-      --line: rgba(200, 146, 87, 0.24);
-      --accent: #c89257;
-      --accent-soft: #e3b078;
-      --max-width: 620px;
-      /* Khai báo bổ sung biến màu bị thiếu để border hiển thị đúng */
-      --gold: #c89257;
-      --gold-lt: #e3b078;
-    }
+ 
 
     html {
-      background: #121110;
-      scroll-behavior: smooth;
+
+  background: #121110;
+
+}
+
+
+
+    :root {
+
+      --bg: #121110;
+
+      --bg-2: #171513;
+
+      --cream: #f5efe4;
+
+      --parchment: #ede3d0;
+
+      --text-dark: #2b1a10;
+
+      --brown: #5c3d22;
+
+      --muted: #7a6450;
+
+      --line: rgba(200, 146, 87, 0.24);
+
+      --accent: #c89257;
+
+      --accent-soft: #e3b078;
+
+      --max-width: 620px;
+
     }
+
+
+
+    html {
+
+      scroll-behavior: smooth;
+
+    }
+
+
 
     body {
+
       font-family: 'Jost', sans-serif;
+
       font-weight: 300;
+
       color: var(--text-dark);
+
       min-height: 100vh;
+
       background:
-        radial-gradient(circle at top left, rgba(200, 146, 87, 0.08), transparent 28%),
-        linear-gradient(180deg, #362f28 0%, #110f0e 100%);
+
+    radial-gradient(circle at top left, rgba(200, 146, 87, 0.08), transparent 28%),
+
+    linear-gradient(180deg, #362f28 0%, #110f0e 100%);
+
+
+
+
+
       padding: 34px 18px 56px;
-      -webkit-font-smoothing: antialiased;
+
     }
+
+
 
     .page-shell {
+
       max-width: 1120px;
+
       margin: 0 auto;
+
     }
+
+
 
     .topbar {
+
       display: flex;
+
       justify-content: flex-start;
+
       margin-bottom: 34px;
+
     }
 
-    .back-link {
-      position: fixed;
-      top: 18px;
-      left: 18px;
-      z-index: 1000;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      text-decoration: none;
-      color: #e6d7c3;
-      font-family: 'Jost', sans-serif;
-      font-size: 0.66rem;
-      font-weight: 400;
-      letter-spacing: 0.24em;
-      text-transform: uppercase;
-      padding: 7px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(230, 215, 195, 0.14);
-      background: rgba(30, 25, 20, 0.6); /* Tối ưu để đọc tốt hơn */
-      backdrop-filter: blur(8px);
-      box-shadow: 0 8px 28px rgba(0,0,0,0.2);
-      transition: 0.25s ease;
-      -webkit-tap-highlight-color: transparent;
-    }
+
+
+.back-link {
+
+  position: fixed;
+
+  top: 18px;
+
+  left: 18px;
+
+  z-index: 1000;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  text-decoration: none;
+
+  color: #e6d7c3;
+
+  font-family: 'Jost', sans-serif;
+
+  font-size: 0.66rem;
+
+  font-weight: 400;
+
+  letter-spacing: 0.24em;
+
+  text-transform: uppercase;
+
+  padding: 7px 12px;
+
+  border-radius: 999px;
+
+  border: 1px solid rgba(230, 215, 195, 0.14);
+
+  background: rgba(255,255,255,0.03);
+
+  backdrop-filter: blur(10px);
+
+  box-shadow: 0 8px 28px rgba(0,0,0,0.2);
+
+  transition: 0.25s ease;
+
+}
+
+
 
     .back-link:hover {
+
       color: #fff8ef;
+
       border-color: rgba(230, 215, 195, 0.28);
-      background: rgba(45, 35, 25, 0.8);
+
+      background: rgba(255,255,255,0.045);
+
       transform: translateY(-1px);
+
+      box-shadow: 0 12px 34px rgba(0,0,0,0.24);
+
     }
+
+
 
     .menu-container {
+
       max-width: var(--max-width);
+
       margin: 0 auto;
+
       background: var(--cream);
+
       border-radius: 28px;
+
       overflow: hidden;
+
       position: relative;
-      box-shadow: 0 24px 80px rgba(0,0,0,0.32), 0 6px 24px rgba(0,0,0,0.18);
+
+      box-shadow:
+
+        0 24px 80px rgba(0,0,0,0.32),
+
+        0 6px 24px rgba(0,0,0,0.18);
+
       border: 1px solid rgba(255,255,255,0.05);
-      will-change: transform;
+
     }
+
+
 
     .menu-container::before {
+
       content: "";
+
       position: absolute;
+
       inset: 0;
+
       border-radius: 28px;
+
       padding: 1px;
+
       background: linear-gradient(90deg, var(--brown), var(--gold), var(--gold-lt), var(--gold), var(--brown));
+
       -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+
       -webkit-mask-composite: xor;
+
       mask-composite: exclude;
+
       pointer-events: none;
+
     }
 
-    .menu-top-line, .menu-footer {
+
+
+    .menu-top-line,
+
+    .menu-footer {
+
       height: 5px;
+
       background: linear-gradient(90deg, #6c4827, var(--accent), var(--accent-soft), var(--accent), #6c4827);
+
     }
+
+
 
     .menu-inner {
+
       position: relative;
+
       padding: 54px 52px 58px;
+
     }
 
-    .menu-inner::before, .menu-inner::after {
+
+
+    .menu-inner::before,
+
+    .menu-inner::after {
+
       content: "";
+
       position: absolute;
+
       width: 64px;
+
       height: 64px;
+
       border-style: solid;
+
       border-color: rgba(200, 146, 87, 0.55);
+
       opacity: 0.55;
+
       pointer-events: none;
+
     }
 
-    .menu-inner::before { top: 24px; left: 24px; border-width: 1px 0 0 1px; }
-    .menu-inner::after { right: 24px; bottom: 24px; border-width: 0 1px 1px 0; }
 
-    .menu-header { text-align: center; margin-bottom: 38px; }
+
+    .menu-inner::before {
+
+      top: 24px;
+
+      left: 24px;
+
+      border-width: 1px 0 0 1px;
+
+    }
+
+
+
+    .menu-inner::after {
+
+      right: 24px;
+
+      bottom: 24px;
+
+      border-width: 0 1px 1px 0;
+
+    }
+
+
+
+    .menu-header {
+
+      text-align: center;
+
+      margin-bottom: 38px;
+
+    }
+
+
 
     .eyebrow {
+
       font-size: 0.72rem;
+
       font-weight: 500;
+
       letter-spacing: 0.28em;
+
       text-transform: uppercase;
+
       color: var(--accent);
+
       margin-bottom: 14px;
+
     }
+
+
 
     h1 {
+
       font-family: "Cormorant Garamond", serif;
+
       font-weight: 500;
+
       font-size: clamp(3rem, 7vw, 4.3rem);
+
       line-height: 0.95;
+
       letter-spacing: -0.03em;
+
       color: var(--text-dark);
+
       margin-bottom: 16px;
+
     }
+
+
 
     .header-rule {
+
       display: flex;
+
       align-items: center;
+
       justify-content: center;
+
       gap: 14px;
+
     }
+
+
 
     .header-rule span {
+
       width: 60px;
+
       height: 1px;
+
       background: var(--accent);
+
       opacity: 0.55;
+
       display: block;
+
     }
+
+
 
     .header-rule em {
+
       font-family: "Cormorant Garamond", serif;
+
       font-style: italic;
+
       font-size: 1.05rem;
+
       color: var(--accent);
+
       letter-spacing: 0.08em;
+
     }
 
-    .menu-section { text-align: center; margin-bottom: 28px; }
-    .menu-section:last-child { margin-bottom: 0; }
+
+
+    .menu-section {
+
+      text-align: center;
+
+      margin-bottom: 28px;
+
+    }
+
+
+
+    .menu-section:last-child {
+
+      margin-bottom: 0;
+
+    }
+
+
 
     .menu-section h2 {
+
       font-family: 'Jost', sans-serif;
+
       font-size: 0.72rem;
+
       font-weight: 600;
+
       letter-spacing: 0.28em;
+
       text-transform: uppercase;
+
       color: var(--accent);
+
       margin-bottom: 14px;
+
       position: relative;
+
       display: inline-block;
+
     }
 
-    .menu-section h2::before, .menu-section h2::after {
+
+
+    .menu-section h2::before,
+
+    .menu-section h2::after {
+
       content: "";
+
       position: absolute;
+
       top: 50%;
+
       width: 28px;
+
       height: 1px;
+
       background: var(--accent-soft);
+
       opacity: 0.6;
+
     }
 
-    .menu-section h2::before { right: calc(100% + 10px); }
-    .menu-section h2::after { left: calc(100% + 10px); }
 
-    ul { list-style: none; }
+
+    .menu-section h2::before {
+
+      right: calc(100% + 10px);
+
+    }
+
+
+
+    .menu-section h2::after {
+
+      left: calc(100% + 10px);
+
+    }
+
+
+
+    ul {
+
+      list-style: none;
+
+    }
+
+
 
     li {
+
       font-family: "Cormorant Garamond", serif;
+
       font-size: 1.45rem;
+
       font-weight: 500;
+
       line-height: 1.38;
+
       letter-spacing: 0.01em;
+
       color: var(--text-dark);
+
       padding: 3px 0;
+
       transition: color 0.2s ease, transform 0.2s ease;
+
     }
+
+
 
     li:hover {
+
       color: var(--brown);
+
       transform: translateY(-1px);
+
     }
+
+
 
     li small {
+
       font-family: "Jost", sans-serif;
+
       font-size: 0.78rem;
+
       font-weight: 500;
+
       color: var(--muted);
+
       margin-left: 6px;
+
       letter-spacing: 0.04em;
+
     }
+
+
 
     .section-divider {
+
       display: flex;
+
       align-items: center;
+
       justify-content: center;
+
       gap: 10px;
+
       margin: 24px 0;
+
     }
 
-    .section-divider::before, .section-divider::after {
+
+
+    .section-divider::before,
+
+    .section-divider::after {
+
       content: "";
+
       display: block;
+
       flex: 1;
+
       height: 1px;
+
       background: var(--line);
+
     }
+
+
 
     .section-divider span {
+
       width: 6px;
+
       height: 6px;
+
       border-radius: 50%;
+
       background: var(--accent);
+
       opacity: 0.65;
+
     }
+
+
 
     @media (max-width: 768px) {
-      body { padding: 22px 14px 40px; }
-      .topbar { margin-bottom: 22px; }
-      .menu-inner { padding: 40px 26px 42px; }
-      .menu-inner::before, .menu-inner::after { width: 42px; height: 42px; }
-      .menu-inner::before { top: 16px; left: 16px; }
-      .menu-inner::after { right: 16px; bottom: 16px; }
-      .header-rule span { width: 42px; }
-      li { font-size: 1.2rem; }
+
+      body {
+
+        padding: 22px 14px 40px;
+
+      }
+
+
+
+      .topbar {
+
+        margin-bottom: 22px;
+
+      }
+
+
+
+      .menu-inner {
+
+        padding: 40px 26px 42px;
+
+      }
+
+
+
+      .menu-inner::before,
+
+      .menu-inner::after {
+
+        width: 42px;
+
+        height: 42px;
+
+      }
+
+
+
+      .menu-inner::before {
+
+        top: 16px;
+
+        left: 16px;
+
+      }
+
+
+
+      .menu-inner::after {
+
+        right: 16px;
+
+        bottom: 16px;
+
+      }
+
+
+
+      .header-rule span {
+
+        width: 42px;
+
+      }
+
+
+
+      li {
+
+        font-size: 1.2rem;
+
+      }
+
     }
+
+
 
     @media (max-width: 480px) {
-      .back-link { gap: 8px; font-size: 0.6rem; letter-spacing: 0.2em; padding: 7px 11px; }
-      .menu-container { border-radius: 22px; }
-      .menu-inner { padding: 34px 20px 36px; }
-      h1 { font-size: 2.5rem; }
-      .eyebrow { font-size: 0.66rem; }
-      .header-rule em { font-size: 0.96rem; }
-      .menu-section h2 { font-size: 0.66rem; letter-spacing: 0.22em; }
-      .menu-section h2::before, .menu-section h2::after { width: 18px; }
-      li { font-size: 1.08rem; line-height: 1.42; }
-      li small { font-size: 0.72rem; }
+
+      .back-link {
+
+        gap: 8px;
+
+        font-size: 0.6rem;
+
+        letter-spacing: 0.2em;
+
+        padding: 7px 11px;
+
+      }
+
+
+
+      .menu-container {
+
+        border-radius: 22px;
+
+      }
+
+
+
+      .menu-inner {
+
+        padding: 34px 20px 36px;
+
+      }
+
+
+
+      h1 {
+
+        font-size: 2.5rem;
+
+      }
+
+
+
+      .eyebrow {
+
+        font-size: 0.66rem;
+
+      }
+
+
+
+      .header-rule em {
+
+        font-size: 0.96rem;
+
+      }
+
+
+
+      .menu-section h2 {
+
+        font-size: 0.66rem;
+
+        letter-spacing: 0.22em;
+
+      }
+
+
+
+      .menu-section h2::before,
+
+      .menu-section h2::after {
+
+        width: 18px;
+
+      }
+
+
+
+      li {
+
+        font-size: 1.08rem;
+
+        line-height: 1.42;
+
+      }
+
+
+
+      li small {
+
+        display: inline-block;
+
+        margin-left: 4px;
+
+        font-size: 0.72rem;
+
+      }
+
     }
+
   </style>
+
 </head>
 
+
+
 <body>
+
   <div class="page-shell">
+
     <div class="topbar">
+
       <a href="index.html" class="back-link">
-        <span>←</span>
-        <span>Back</span>
-      </a>
+
+  <span>←</span>
+
+  <span>Back</span>
+
+</a>
+
     </div>
 
+
+
     <main>
+
       <div class="menu-container">
+
         <div class="menu-top-line"></div>
 
+
+
         <div class="menu-inner">
+
           <header class="menu-header">
+
             <div class="eyebrow">An Xuyen Bakery</div>
+
             <h1>Menu</h1>
+
             <div class="header-rule">
+
               <span></span>
+
               <em>SeaTac</em>
+
               <span></span>
+
             </div>
+
           </header>
 
+
+
           <article>
+
             <section class="menu-section">
+
               <h2>French Bread</h2>
+
               <ul>
+
                 <li>8 inch Demi Baguette <small>3.5 oz</small></li>
+
                 <li>24 inch Baguette <small>12 oz</small></li>
+
                 <li>4 inch Con Coc <small>2 oz</small></li>
+
                 <li>10 inch</li>
+
                 <li>12 inch</li>
+
                 <li>Batard</li>
+
               </ul>
+
             </section>
+
+
 
             <div class="section-divider"><span></span></div>
 
+
+
             <section class="menu-section">
+
               <h2>Croissants</h2>
+
               <ul>
+
                 <li>Regular Croissant</li>
+
                 <li>Mini Croissants</li>
+
                 <li>Almond Croissant</li>
+
                 <li>Raisin Croissant</li>
+
                 <li>Cinnamon Croissant</li>
+
                 <li>Coconut Croissant</li>
+
                 <li>Chocolate Croissant</li>
+
               </ul>
+
             </section>
+
+
 
             <div class="section-divider"><span></span></div>
 
+
+
             <section class="menu-section">
+
               <h2>Sweet Bread</h2>
+
               <ul>
+
                 <li>Sweet Roll</li>
+
                 <li>Taro Bun</li>
+
                 <li>Coconut Bun</li>
+
                 <li>Raisin Almond Twisted Bread</li>
+
                 <li>Mung Bean Bun</li>
+
               </ul>
+
             </section>
+
+
 
             <div class="section-divider"><span></span></div>
 
+
+
             <section class="menu-section">
+
               <h2>Puff Pastries</h2>
+
               <ul>
+
                 <li>Cinnamon Twist</li>
+
                 <li>Palmier</li>
+
                 <li>PateChaud</li>
+
               </ul>
+
             </section>
+
+
 
             <div class="section-divider"><span></span></div>
 
+
+
             <section class="menu-section">
+
               <h2>Cookies</h2>
+
               <ul>
+
                 <li>French Almond Cookie</li>
+
                 <li>French Currant Cookie</li>
+
                 <li>Coconut Macaron</li>
+
               </ul>
+
             </section>
+
           </article>
+
         </div>
 
         <div class="menu-footer"></div>
+
       </div>
-    </main>
-  </div>
-</body>
-</html>
