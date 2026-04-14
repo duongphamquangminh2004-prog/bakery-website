@@ -15,11 +15,13 @@
   <meta property="og:url" content="https://duongphamquangminh2004-prog.github.io/bakery-website/menu-an-xuyen.html" />
   <meta property="og:site_name" content="An Xuyen Bakery" />
   <meta property="og:locale" content="en_US" />
+  <meta property="og:image" content="https://duongphamquangminh2004-prog.github.io/bakery-website/images/banh-my.jpg" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Menu – An Xuyen Bakery | Vietnamese Bakery in Seattle Area" />
-  <meta name="twitter:description" content="Browse the full menu at An Xuyen Bakery — French bread, croissants, sweet bread, puff pastries, and cookies. A Vietnamese bakery serving the Seattle area." />
+  <meta name="twitter:description" content="Browse the full menu at An Xuyen Bakery — French bread, croissants, sweet bread, puff pastries, and cookies." />
   <meta name="theme-color" content="#121110">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Jost:wght@300;400&display=swap" rel="stylesheet">
@@ -30,10 +32,6 @@
       margin: 0;
       padding: 0;
     }
- 
-    html {
-  background: #121110;
-}
 
     :root {
       --bg: #121110;
@@ -47,9 +45,13 @@
       --accent: #c89257;
       --accent-soft: #e3b078;
       --max-width: 620px;
+      /* Khai báo bổ sung biến màu bị thiếu để border hiển thị đúng */
+      --gold: #c89257;
+      --gold-lt: #e3b078;
     }
 
     html {
+      background: #121110;
       scroll-behavior: smooth;
     }
 
@@ -59,11 +61,10 @@
       color: var(--text-dark);
       min-height: 100vh;
       background:
-    radial-gradient(circle at top left, rgba(200, 146, 87, 0.08), transparent 28%),
-    linear-gradient(180deg, #362f28 0%, #110f0e 100%);
-
-
+        radial-gradient(circle at top left, rgba(200, 146, 87, 0.08), transparent 28%),
+        linear-gradient(180deg, #362f28 0%, #110f0e 100%);
       padding: 34px 18px 56px;
+      -webkit-font-smoothing: antialiased;
     }
 
     .page-shell {
@@ -77,36 +78,36 @@
       margin-bottom: 34px;
     }
 
-.back-link {
-  position: fixed;
-  top: 18px;
-  left: 18px;
-  z-index: 1000;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  text-decoration: none;
-  color: #e6d7c3;
-  font-family: 'Jost', sans-serif;
-  font-size: 0.66rem;
-  font-weight: 400;
-  letter-spacing: 0.24em;
-  text-transform: uppercase;
-  padding: 7px 12px;
-  border-radius: 999px;
-  border: 1px solid rgba(230, 215, 195, 0.14);
-  background: rgba(255,255,255,0.03);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 8px 28px rgba(0,0,0,0.2);
-  transition: 0.25s ease;
-}
+    .back-link {
+      position: fixed;
+      top: 18px;
+      left: 18px;
+      z-index: 1000;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: #e6d7c3;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.66rem;
+      font-weight: 400;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      padding: 7px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(230, 215, 195, 0.14);
+      background: rgba(30, 25, 20, 0.6); /* Tối ưu để đọc tốt hơn */
+      backdrop-filter: blur(8px);
+      box-shadow: 0 8px 28px rgba(0,0,0,0.2);
+      transition: 0.25s ease;
+      -webkit-tap-highlight-color: transparent;
+    }
 
     .back-link:hover {
       color: #fff8ef;
       border-color: rgba(230, 215, 195, 0.28);
-      background: rgba(255,255,255,0.045);
+      background: rgba(45, 35, 25, 0.8);
       transform: translateY(-1px);
-      box-shadow: 0 12px 34px rgba(0,0,0,0.24);
     }
 
     .menu-container {
@@ -116,10 +117,9 @@
       border-radius: 28px;
       overflow: hidden;
       position: relative;
-      box-shadow:
-        0 24px 80px rgba(0,0,0,0.32),
-        0 6px 24px rgba(0,0,0,0.18);
+      box-shadow: 0 24px 80px rgba(0,0,0,0.32), 0 6px 24px rgba(0,0,0,0.18);
       border: 1px solid rgba(255,255,255,0.05);
+      will-change: transform;
     }
 
     .menu-container::before {
@@ -135,8 +135,7 @@
       pointer-events: none;
     }
 
-    .menu-top-line,
-    .menu-footer {
+    .menu-top-line, .menu-footer {
       height: 5px;
       background: linear-gradient(90deg, #6c4827, var(--accent), var(--accent-soft), var(--accent), #6c4827);
     }
@@ -146,8 +145,7 @@
       padding: 54px 52px 58px;
     }
 
-    .menu-inner::before,
-    .menu-inner::after {
+    .menu-inner::before, .menu-inner::after {
       content: "";
       position: absolute;
       width: 64px;
@@ -158,22 +156,10 @@
       pointer-events: none;
     }
 
-    .menu-inner::before {
-      top: 24px;
-      left: 24px;
-      border-width: 1px 0 0 1px;
-    }
+    .menu-inner::before { top: 24px; left: 24px; border-width: 1px 0 0 1px; }
+    .menu-inner::after { right: 24px; bottom: 24px; border-width: 0 1px 1px 0; }
 
-    .menu-inner::after {
-      right: 24px;
-      bottom: 24px;
-      border-width: 0 1px 1px 0;
-    }
-
-    .menu-header {
-      text-align: center;
-      margin-bottom: 38px;
-    }
+    .menu-header { text-align: center; margin-bottom: 38px; }
 
     .eyebrow {
       font-size: 0.72rem;
@@ -217,14 +203,8 @@
       letter-spacing: 0.08em;
     }
 
-    .menu-section {
-      text-align: center;
-      margin-bottom: 28px;
-    }
-
-    .menu-section:last-child {
-      margin-bottom: 0;
-    }
+    .menu-section { text-align: center; margin-bottom: 28px; }
+    .menu-section:last-child { margin-bottom: 0; }
 
     .menu-section h2 {
       font-family: 'Jost', sans-serif;
@@ -238,8 +218,7 @@
       display: inline-block;
     }
 
-    .menu-section h2::before,
-    .menu-section h2::after {
+    .menu-section h2::before, .menu-section h2::after {
       content: "";
       position: absolute;
       top: 50%;
@@ -249,17 +228,10 @@
       opacity: 0.6;
     }
 
-    .menu-section h2::before {
-      right: calc(100% + 10px);
-    }
+    .menu-section h2::before { right: calc(100% + 10px); }
+    .menu-section h2::after { left: calc(100% + 10px); }
 
-    .menu-section h2::after {
-      left: calc(100% + 10px);
-    }
-
-    ul {
-      list-style: none;
-    }
+    ul { list-style: none; }
 
     li {
       font-family: "Cormorant Garamond", serif;
@@ -294,8 +266,7 @@
       margin: 24px 0;
     }
 
-    .section-divider::before,
-    .section-divider::after {
+    .section-divider::before, .section-divider::after {
       content: "";
       display: block;
       flex: 1;
@@ -312,91 +283,27 @@
     }
 
     @media (max-width: 768px) {
-      body {
-        padding: 22px 14px 40px;
-      }
-
-      .topbar {
-        margin-bottom: 22px;
-      }
-
-      .menu-inner {
-        padding: 40px 26px 42px;
-      }
-
-      .menu-inner::before,
-      .menu-inner::after {
-        width: 42px;
-        height: 42px;
-      }
-
-      .menu-inner::before {
-        top: 16px;
-        left: 16px;
-      }
-
-      .menu-inner::after {
-        right: 16px;
-        bottom: 16px;
-      }
-
-      .header-rule span {
-        width: 42px;
-      }
-
-      li {
-        font-size: 1.2rem;
-      }
+      body { padding: 22px 14px 40px; }
+      .topbar { margin-bottom: 22px; }
+      .menu-inner { padding: 40px 26px 42px; }
+      .menu-inner::before, .menu-inner::after { width: 42px; height: 42px; }
+      .menu-inner::before { top: 16px; left: 16px; }
+      .menu-inner::after { right: 16px; bottom: 16px; }
+      .header-rule span { width: 42px; }
+      li { font-size: 1.2rem; }
     }
 
     @media (max-width: 480px) {
-      .back-link {
-        gap: 8px;
-        font-size: 0.6rem;
-        letter-spacing: 0.2em;
-        padding: 7px 11px;
-      }
-
-      .menu-container {
-        border-radius: 22px;
-      }
-
-      .menu-inner {
-        padding: 34px 20px 36px;
-      }
-
-      h1 {
-        font-size: 2.5rem;
-      }
-
-      .eyebrow {
-        font-size: 0.66rem;
-      }
-
-      .header-rule em {
-        font-size: 0.96rem;
-      }
-
-      .menu-section h2 {
-        font-size: 0.66rem;
-        letter-spacing: 0.22em;
-      }
-
-      .menu-section h2::before,
-      .menu-section h2::after {
-        width: 18px;
-      }
-
-      li {
-        font-size: 1.08rem;
-        line-height: 1.42;
-      }
-
-      li small {
-        display: inline-block;
-        margin-left: 4px;
-        font-size: 0.72rem;
-      }
+      .back-link { gap: 8px; font-size: 0.6rem; letter-spacing: 0.2em; padding: 7px 11px; }
+      .menu-container { border-radius: 22px; }
+      .menu-inner { padding: 34px 20px 36px; }
+      h1 { font-size: 2.5rem; }
+      .eyebrow { font-size: 0.66rem; }
+      .header-rule em { font-size: 0.96rem; }
+      .menu-section h2 { font-size: 0.66rem; letter-spacing: 0.22em; }
+      .menu-section h2::before, .menu-section h2::after { width: 18px; }
+      li { font-size: 1.08rem; line-height: 1.42; }
+      li small { font-size: 0.72rem; }
     }
   </style>
 </head>
@@ -405,9 +312,9 @@
   <div class="page-shell">
     <div class="topbar">
       <a href="index.html" class="back-link">
-  <span>←</span>
-  <span>Back</span>
-</a>
+        <span>←</span>
+        <span>Back</span>
+      </a>
     </div>
 
     <main>
@@ -492,3 +399,7 @@
 
         <div class="menu-footer"></div>
       </div>
+    </main>
+  </div>
+</body>
+</html>

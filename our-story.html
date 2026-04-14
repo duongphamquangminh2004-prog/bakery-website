@@ -6,6 +6,9 @@
   <meta name="theme-color" content="#121110">
   <title>Our Story - An Xuyen</title>
 
+  <meta name="description" content="The story of An Xuyen Bakery - From Ca Mau to Seattle." />
+  <link rel="canonical" href="https://duongphamquangminh2004-prog.github.io/bakery-website/our-story.html" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
@@ -37,10 +40,12 @@
     body {
       font-family: "Inter", sans-serif;
       background:
-    radial-gradient(circle at top left, rgba(200,146,87,0.12), transparent 50%),
-    linear-gradient(180deg, #1a1511 0%, #110f0e 40%, #0b0a09 100%);
+        radial-gradient(circle at top left, rgba(200,146,87,0.12), transparent 50%),
+        linear-gradient(180deg, #1a1511 0%, #110f0e 40%, #0b0a09 100%);
       color: var(--text);
       line-height: 1.75;
+      /* Giúp font chữ hiển thị sắc nét hơn */
+      -webkit-font-smoothing: antialiased;
     }
 
     .back-link {
@@ -65,6 +70,8 @@
       backdrop-filter: blur(10px);
       box-shadow: 0 8px 28px rgba(0,0,0,0.2);
       transition: color 0.25s ease, border-color 0.25s ease, background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+      /* Tối ưu bấm trên mobile */
+      -webkit-tap-highlight-color: transparent;
     }
 
     .back-link:hover {
@@ -167,6 +174,8 @@
       position: relative;
       backdrop-filter: blur(8px);
       box-shadow: 0 20px 70px rgba(0,0,0,0.28);
+      /* Tối ưu hiệu năng cuộn */
+      will-change: transform;
     }
 
     .timeline-card::before {
@@ -249,13 +258,8 @@
         grid-template-columns: 1fr;
         gap: 42px;
       }
-
       .story-section {
         padding: 90px 20px 60px;
-      }
-
-      .timeline-card {
-        padding: 28px 22px;
       }
     }
 
@@ -268,39 +272,26 @@
         letter-spacing: 0.2em;
         padding: 6px 10px;
       }
-
       .story-section {
         padding: 80px 16px 50px;
       }
-
-      .story-wrap {
-        gap: 30px;
-      }
-
       h1 {
         font-size: 2.6rem;
-        line-height: 1.05;
       }
-
       .subtitle {
         font-size: 1.1rem;
-        margin-bottom: 26px;
       }
-
       .lead p,
       .closing,
       .item p {
         font-size: 1rem;
       }
-
       .item h3 {
         font-size: 1.6rem;
       }
-
       .timeline {
         padding-left: 28px;
       }
-
       .dot {
         left: -28px;
         width: 16px;
@@ -312,7 +303,7 @@
 <body>
   <a href="index.html" class="back-link"><span>←</span><span>Back</span></a>
 
-  <section class="story-section" id="our-story">
+  <main class="story-section" id="our-story">
     <div class="story-wrap">
       <div class="story-left">
         <div class="eyebrow">Our Story</div>
@@ -368,6 +359,6 @@
         </div>
       </aside>
     </div>
-  </section>
+  </main>
 </body>
 </html>
